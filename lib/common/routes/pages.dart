@@ -1,9 +1,10 @@
-
+import 'package:firebase_chat/pages/welcome/view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_chat/common/middlewares/middlewares.dart';
 
 import 'package:get/get.dart';
 
+import '../../pages/welcome/bindings.dart';
 import 'routes.dart';
 
 class AppPages {
@@ -13,15 +14,12 @@ class AppPages {
   static List<String> history = [];
 
   static final List<GetPage> routes = [
-   /*
     GetPage(
       name: AppRoutes.INITIAL,
       page: () => WelcomePage(),
       binding: WelcomeBinding(),
-      middlewares: [
-        RouteWelcomeMiddleware(priority: 1),
-      ],
     ),
+    /*
     GetPage(
       name: AppRoutes.SIGN_IN,
       page: () => SignInPage(),
@@ -50,10 +48,4 @@ class AppPages {
 
     GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),*/
   ];
-
-
-
-
-
-
 }
