@@ -11,56 +11,56 @@ class WelcomePage extends GetView<WelcomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(() => SizedBox(
-            width: 360.w,
-            height: 780.w,
-            child: Stack(
-              alignment: Alignment.bottomCenter,
+      body: SizedBox(
+        width: 360.w,
+        height: 780.w,
+        child: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            PageView(
+              scrollDirection: Axis.horizontal,
+              reverse: false,
+              onPageChanged: (index) {},
+              controller: PageController(
+                  initialPage: 0, keepPage: true, viewportFraction: 1),
+              pageSnapping: true,
+              physics: ClampingScrollPhysics(),
               children: [
-                PageView(
-                  scrollDirection: Axis.horizontal,
-                  reverse: false,
-                  onPageChanged: (index) {},
-                  controller: PageController(
-                      initialPage: 0, keepPage: true, viewportFraction: 1),
-                  pageSnapping: true,
-                  physics: ClampingScrollPhysics(),
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/banner1.png'),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/banner1.png'),
+                      fit: BoxFit.fill,
                     ),
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/banner1.png'),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/banner1.png'),
+                      fit: BoxFit.fill,
                     ),
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/banner1.png'),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    )
-                  ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/banner1.png'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 )
               ],
-            ),
-          )),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
