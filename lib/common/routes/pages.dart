@@ -4,7 +4,7 @@ import 'package:firebase_chat/common/middlewares/middlewares.dart';
 
 import 'package:get/get.dart';
 
-import '../../pages/welcome/bindings.dart';
+import '../../pages/welcome/index.dart';
 import 'routes.dart';
 
 class AppPages {
