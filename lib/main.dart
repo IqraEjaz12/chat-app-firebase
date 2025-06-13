@@ -1,4 +1,6 @@
 import 'package:firebase_chat/common/routes/routes.dart';
+import 'package:firebase_chat/common/services/storage.dart';
+import 'package:firebase_chat/common/store/config.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -11,6 +13,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Get.putAsync<StorageService>(() => StorageService().init());
+  Get.put<ConfigStore>(ConfigStore());
+
   runApp(const MyApp());
 }
 
