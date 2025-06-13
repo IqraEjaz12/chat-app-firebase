@@ -11,6 +11,9 @@ import 'package:dots_indicator/dots_indicator.dart';
 
 class SignInPage extends GetView<SiginInController> {
   const SignInPage({super.key});
+  void signIn() {
+    controller.handleGoogleSignIn();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,9 @@ class SignInPage extends GetView<SiginInController> {
         children: [
           BuildLogoSignIn(),
           Spacer(),
-          BuildThirdPartyLogin(),
+          BuildThirdPartyLogin(
+            onGoogleSignIn: signIn,
+          ),
         ],
       ),
     ));

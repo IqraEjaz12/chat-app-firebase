@@ -7,7 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../common/values/colors.dart';
 
 class BuildThirdPartyLogin extends StatelessWidget {
-  const BuildThirdPartyLogin({super.key});
+  const BuildThirdPartyLogin({super.key, required this.onGoogleSignIn});
+
+  final VoidCallback onGoogleSignIn;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class BuildThirdPartyLogin extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 30.h, left: 50.w, right: 50.w),
             child: btnFlatButtonWidget(
-              onPressed: () => null,
+              onPressed: () => onGoogleSignIn,
               width: 200.w,
               height: 55.h,
               title: "Sign in with Google",
