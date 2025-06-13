@@ -1,5 +1,6 @@
 import 'package:firebase_chat/pages/sign_in/controller.dart';
 import 'package:firebase_chat/pages/sign_in/widgets/build_logo.dart';
+import 'package:firebase_chat/pages/sign_in/widgets/build_third_party_login.dart';
 import 'package:firebase_chat/pages/welcome/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -18,6 +19,8 @@ class SignInPage extends GetView<SiginInController> {
       child: Column(
         children: [
           BuildLogoSignIn(),
+          Spacer(),
+          BuildThirdPartyLogin(),
         ],
       ),
     ));

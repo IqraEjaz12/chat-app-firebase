@@ -54,7 +54,8 @@ class BuildLogoSignIn extends StatelessWidget {
               'Let\'s Chat',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 15.sp,
+                fontSize: 18.sp,
+                height: 1,
                 fontWeight: FontWeight.w600,
                 color: AppColors.thirdElement,
               ),
