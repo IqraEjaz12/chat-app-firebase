@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import 'package:firebase_chat/pages/welcome/index.dart';
 import 'package:firebase_chat/pages/sign_in/index.dart';
+import 'package:firebase_chat/pages/sign_up/index.dart';
 import 'routes.dart';
 
 class AppPages {
@@ -24,6 +25,11 @@ class AppPages {
       name: AppRoutes.SIGN_IN,
       page: () => SignInPage(),
       binding: SignInBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.SIGN_UP,
+      page: () => SignUpPage(),
+      binding: SignUpBinding(),
     ),
     /*
    

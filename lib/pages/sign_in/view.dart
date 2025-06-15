@@ -1,33 +1,34 @@
 import 'package:firebase_chat/pages/sign_in/controller.dart';
 import 'package:firebase_chat/pages/sign_in/widgets/build_logo.dart';
+import 'package:firebase_chat/pages/sign_in/widgets/build_email_login_form.dart';
 import 'package:firebase_chat/pages/sign_in/widgets/build_third_party_login.dart';
-import 'package:firebase_chat/pages/welcome/controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/container.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 
 class SignInPage extends GetView<SiginInController> {
   const SignInPage({super.key});
-  void signIn() {
-    controller.handleGoogleSignIn();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Column(
-        children: [
-          BuildLogoSignIn(),
-          Spacer(),
-          BuildThirdPartyLogin(
-            onGoogleSignIn: signIn,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
+          child: Column(
+            children: [
+              SizedBox(height: 50.h),
+              BuildLogoSignIn(),
+              SizedBox(height: 50.h),
+              BuildEmailLoginForm(),
+              BuildThirdPartyLogin(
+                onGoogleSignIn: () => controller.handleGoogleSignIn(),
+              ),
+              SizedBox(height: 50.h),
+            ],
           ),
-        ],
+        ),
       ),
-    ));
+    );
   }
 }

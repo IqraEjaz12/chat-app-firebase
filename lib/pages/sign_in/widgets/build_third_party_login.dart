@@ -15,11 +15,11 @@ class BuildThirdPartyLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 295.w,
-      margin: EdgeInsets.only(bottom: 280.h),
+      margin: EdgeInsets.only(bottom: 80.h),
       child: Column(
         children: [
           Text(
-            "Sign in with Third Party",
+            "Continue with",
             style: TextStyle(
               fontSize: 16.sp,
               height: 1,
@@ -27,14 +27,18 @@ class BuildThirdPartyLogin extends StatelessWidget {
               color: AppColors.primaryText,
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 30.h, left: 50.w, right: 50.w),
-            child: btnFlatButtonWidget(
-              onPressed: () => onGoogleSignIn,
-              width: 200.w,
-              height: 55.h,
-              title: "Sign in with Google",
-            ),
+          SizedBox(height: 20.h),
+          
+          // Google Sign-In Button
+          btnFlatButtonWidget(
+            onPressed: onGoogleSignIn,
+            width: 295.w,
+            height: 50.h,
+            title: "Continue with Google",
+            gbColor: AppColors.primaryElement,
+            fontColor: AppColors.primaryElementText,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
           ),
         ],
       ),
