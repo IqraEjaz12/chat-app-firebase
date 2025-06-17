@@ -81,7 +81,9 @@ class WelcomePage extends GetView<WelcomeController> {
                               ),
                             ),
                           ),
-                          onPressed: () => null,
+                          onPressed: () {
+                            controller.handleSignIn();
+                          },
                           child: Text("Login"),
                         ),
                       ),

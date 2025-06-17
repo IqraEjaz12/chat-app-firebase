@@ -1,10 +1,13 @@
+import 'package:firebase_chat/pages/application/index.dart';
 import 'package:firebase_chat/pages/welcome/view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_chat/common/middlewares/middlewares.dart';
 
 import 'package:get/get.dart';
 
-import '../../pages/welcome/index.dart';
+import 'package:firebase_chat/pages/welcome/index.dart';
+import 'package:firebase_chat/pages/sign_in/index.dart';
+import 'package:firebase_chat/pages/sign_up/index.dart';
 import 'routes.dart';
 
 class AppPages {
@@ -19,22 +22,30 @@ class AppPages {
       page: () => WelcomePage(),
       binding: WelcomeBinding(),
     ),
-    /*
     GetPage(
       name: AppRoutes.SIGN_IN,
       page: () => SignInPage(),
       binding: SignInBinding(),
     ),
-
-    // check if needed to login or not
+    GetPage(
+      name: AppRoutes.SIGN_UP,
+      page: () => SignUpPage(),
+      binding: SignUpBinding(),
+    ),
     GetPage(
       name: AppRoutes.Application,
       page: () => ApplicationPage(),
       binding: ApplicationBinding(),
-      middlewares: [
-        RouteAuthMiddleware(priority: 1),
-      ],
+      // middlewares: [
+      //   RouteAuthMiddleware(priority: 1),
+      // ],
     ),
+
+    /*
+   
+
+    // check if needed to login or not
+ 
 
     // 最新路由
     // 首页
