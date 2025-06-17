@@ -13,10 +13,10 @@ class BuildEmailLoginForm extends StatelessWidget {
     final controller = Get.find<SiginInController>();
 
     return Container(
-      width: 295.w,
-      margin: EdgeInsets.only(bottom: 30.h),
+      width: 270.w,
+      margin: EdgeInsets.only(bottom: 15.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Title
           Center(
@@ -30,7 +30,7 @@ class BuildEmailLoginForm extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 30.h),
+          SizedBox(height: 20.h),
 
           // Email input
           inputEmailEdit(
@@ -105,23 +105,6 @@ class BuildEmailLoginForm extends StatelessWidget {
 
           SizedBox(height: 10.h),
 
-          // Forgot Password link
-          Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () => controller.handleForgotPasswordDialog(),
-              child: Text(
-                'Forgot Password?',
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  color: AppColors.primaryElement,
-                ),
-              ),
-            ),
-          ),
-
-          SizedBox(height: 10.h),
-
           // Sign In button
           Obx(() => btnFlatButtonWidget(
                 onPressed: controller.isLoading.value
@@ -143,8 +126,8 @@ class BuildEmailLoginForm extends StatelessWidget {
                 onPressed: controller.isLoading.value
                     ? () {}
                     : () => controller.handleCreateAccount(),
-                width: 295.w,
-                height: 50.h,
+                width: 270.w,
+                height: 20.h,
                 title: controller.isLoading.value
                     ? "Creating Account..."
                     : "Create Account",
@@ -154,7 +137,7 @@ class BuildEmailLoginForm extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               )),
 
-          SizedBox(height: 30.h),
+          SizedBox(height: 5.h),
 
           // Divider
           Row(
@@ -171,7 +154,7 @@ class BuildEmailLoginForm extends StatelessWidget {
                   "OR",
                   style: TextStyle(
                     color: AppColors.fourElementText,
-                    fontSize: 14.sp,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

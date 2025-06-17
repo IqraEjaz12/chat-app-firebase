@@ -13,20 +13,41 @@ class SignInPage extends GetView<SiginInController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 25.w),
-          child: Column(
-            children: [
-              SizedBox(height: 50.h),
-              BuildLogoSignIn(),
-              SizedBox(height: 50.h),
-              BuildEmailLoginForm(),
-              BuildThirdPartyLogin(
-                onGoogleSignIn: () => controller.handleGoogleSignIn(),
-              ),
-              SizedBox(height: 50.h),
-            ],
-          ),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: EdgeInsets.only(left: 40.w),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        BuildLogoSignIn(),
+                        SizedBox(height: 10.h),
+                        BuildEmailLoginForm(),
+                        SizedBox(height: 2.h),
+                        BuildThirdPartyLogin(
+                          onGoogleSignIn: () => controller.handleGoogleSignIn(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20.h),
+                  child: Text(
+                    'Powered by Firebase Chat',
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );

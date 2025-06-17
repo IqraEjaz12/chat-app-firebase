@@ -15,5 +15,4 @@ class AppRoutes {
   static const Chat = '/chat';
 
   static const Photoimgview = '/photoimgview';
-
 }

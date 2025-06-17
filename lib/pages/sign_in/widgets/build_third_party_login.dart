@@ -14,8 +14,8 @@ class BuildThirdPartyLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 295.w,
-      margin: EdgeInsets.only(bottom: 80.h),
+      width: 270.w,
+      margin: EdgeInsets.only(bottom: 20.h),
       child: Column(
         children: [
           Text(
@@ -27,12 +27,12 @@ class BuildThirdPartyLogin extends StatelessWidget {
               color: AppColors.primaryText,
             ),
           ),
-          SizedBox(height: 20.h),
-          
+          SizedBox(height: 10.h),
+
           // Google Sign-In Button
           btnFlatButtonWidget(
             onPressed: onGoogleSignIn,
-            width: 295.w,
+            width: 270.w,
             height: 50.h,
             title: "Continue with Google",
             gbColor: AppColors.primaryElement,

@@ -35,7 +35,7 @@ class SignUpPage extends GetView<SignUpController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 30.h),
-              
+
               // Welcome text
               Text(
                 'Join us today!',
@@ -138,7 +138,8 @@ class SignUpPage extends GetView<SignUpController> {
           hintText: 'Enter your full name',
           hintStyle: TextStyle(color: Colors.grey[500]),
           border: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          contentPadding:
+              EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           prefixIcon: Icon(Icons.person_outline, color: Colors.grey[500]),
         ),
         style: TextStyle(fontSize: 16.sp),
@@ -160,7 +161,8 @@ class SignUpPage extends GetView<SignUpController> {
           hintText: 'Enter your email address',
           hintStyle: TextStyle(color: Colors.grey[500]),
           border: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          contentPadding:
+              EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           prefixIcon: Icon(Icons.email_outlined, color: Colors.grey[500]),
         ),
         style: TextStyle(fontSize: 16.sp),
@@ -170,130 +172,131 @@ class SignUpPage extends GetView<SignUpController> {
 
   Widget _buildPasswordField() {
     return Obx(() => Container(
-      height: 50.h,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey[300]!),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: TextField(
-        controller: controller.passwordController,
-        obscureText: !controller.isPasswordVisible.value,
-        decoration: InputDecoration(
-          hintText: 'Enter your password',
-          hintStyle: TextStyle(color: Colors.grey[500]),
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-          prefixIcon: Icon(Icons.lock_outline, color: Colors.grey[500]),
-          suffixIcon: IconButton(
-            icon: Icon(
-              controller.isPasswordVisible.value 
-                  ? Icons.visibility_off 
-                  : Icons.visibility,
-              color: Colors.grey[500],
-            ),
-            onPressed: controller.togglePasswordVisibility,
+          height: 50.h,
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey[300]!),
+            borderRadius: BorderRadius.circular(8.r),
           ),
-        ),
-        style: TextStyle(fontSize: 16.sp),
-      ),
-    ));
+          child: TextField(
+            controller: controller.passwordController,
+            obscureText: !controller.isPasswordVisible.value,
+            decoration: InputDecoration(
+              hintText: 'Enter your password',
+              hintStyle: TextStyle(color: Colors.grey[500]),
+              border: InputBorder.none,
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              prefixIcon: Icon(Icons.lock_outline, color: Colors.grey[500]),
+              suffixIcon: IconButton(
+                icon: Icon(
+                  controller.isPasswordVisible.value
+                      ? Icons.visibility_off
+                      : Icons.visibility,
+                  color: Colors.grey[500],
+                ),
+                onPressed: controller.togglePasswordVisibility,
+              ),
+            ),
+            style: TextStyle(fontSize: 16.sp),
+          ),
+        ));
   }
 
   Widget _buildConfirmPasswordField() {
     return Obx(() => Container(
-      height: 50.h,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey[300]!),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: TextField(
-        controller: controller.confirmPasswordController,
-        obscureText: !controller.isConfirmPasswordVisible.value,
-        decoration: InputDecoration(
-          hintText: 'Confirm your password',
-          hintStyle: TextStyle(color: Colors.grey[500]),
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-          prefixIcon: Icon(Icons.lock_outline, color: Colors.grey[500]),
-          suffixIcon: IconButton(
-            icon: Icon(
-              controller.isConfirmPasswordVisible.value 
-                  ? Icons.visibility_off 
-                  : Icons.visibility,
-              color: Colors.grey[500],
-            ),
-            onPressed: controller.toggleConfirmPasswordVisibility,
+          height: 50.h,
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey[300]!),
+            borderRadius: BorderRadius.circular(8.r),
           ),
-        ),
-        style: TextStyle(fontSize: 16.sp),
-      ),
-    ));
+          child: TextField(
+            controller: controller.confirmPasswordController,
+            obscureText: !controller.isConfirmPasswordVisible.value,
+            decoration: InputDecoration(
+              hintText: 'Confirm your password',
+              hintStyle: TextStyle(color: Colors.grey[500]),
+              border: InputBorder.none,
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              prefixIcon: Icon(Icons.lock_outline, color: Colors.grey[500]),
+              suffixIcon: IconButton(
+                icon: Icon(
+                  controller.isConfirmPasswordVisible.value
+                      ? Icons.visibility_off
+                      : Icons.visibility,
+                  color: Colors.grey[500],
+                ),
+                onPressed: controller.toggleConfirmPasswordVisibility,
+              ),
+            ),
+            style: TextStyle(fontSize: 16.sp),
+          ),
+        ));
   }
 
   Widget _buildTermsCheckbox() {
     return Obx(() => Row(
-      children: [
-        Checkbox(
-          value: controller.agreedToTerms.value,
-          onChanged: (value) => controller.toggleTermsAgreement(),
-          activeColor: Colors.blue,
-        ),
-        Expanded(
-          child: RichText(
-            text: TextSpan(
-              style: TextStyle(fontSize: 14.sp, color: Colors.grey[600]),
-              children: [
-                const TextSpan(text: 'I agree to the '),
-                TextSpan(
-                  text: 'Terms and Conditions',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const TextSpan(text: ' and '),
-                TextSpan(
-                  text: 'Privacy Policy',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
+          children: [
+            Checkbox(
+              value: controller.agreedToTerms.value,
+              onChanged: (value) => controller.toggleTermsAgreement(),
+              activeColor: Colors.blue,
             ),
-          ),
-        ),
-      ],
-    ));
+            Expanded(
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(fontSize: 14.sp, color: Colors.grey[600]),
+                  children: [
+                    const TextSpan(text: 'I agree to the '),
+                    TextSpan(
+                      text: 'Terms and Conditions',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const TextSpan(text: ' and '),
+                    TextSpan(
+                      text: 'Privacy Policy',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 
   Widget _buildSignUpButton() {
     return Obx(() => Container(
-      width: double.infinity,
-      height: 50.h,
-      child: ElevatedButton(
-        onPressed: controller.isLoading.value 
-            ? null 
-            : controller.handleSignUp,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blue,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.r),
-          ),
-          elevation: 0,
-        ),
-        child: controller.isLoading.value
-            ? const CircularProgressIndicator(color: Colors.white)
-            : Text(
-                'Create Account',
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
+          width: double.infinity,
+          height: 50.h,
+          child: ElevatedButton(
+            onPressed:
+                controller.isLoading.value ? null : controller.handleSignUp,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.r),
               ),
-      ),
-    ));
+              elevation: 0,
+            ),
+            child: controller.isLoading.value
+                ? const CircularProgressIndicator(color: Colors.white)
+                : Text(
+                    'Create Account',
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+          ),
+        ));
   }
 
   Widget _buildSignInLink() {
