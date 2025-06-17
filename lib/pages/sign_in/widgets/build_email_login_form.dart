@@ -29,9 +29,9 @@ class BuildEmailLoginForm extends StatelessWidget {
               ),
             ),
           ),
-          
+
           SizedBox(height: 30.h),
-          
+
           // Email input
           inputEmailEdit(
             controller: controller.emailController,
@@ -39,54 +39,54 @@ class BuildEmailLoginForm extends StatelessWidget {
             hintText: "Enter your email",
             marginTop: 0,
           ),
-          
+
           SizedBox(height: 15.h),
-          
+
           // Password input with toggle visibility
           Obx(() => Container(
-            height: 44.h,
-            decoration: BoxDecoration(
-              color: AppColors.primaryBackground,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromARGB(41, 0, 0, 0),
-                  offset: Offset(0, 1),
-                  blurRadius: 0,
+                height: 44.h,
+                decoration: BoxDecoration(
+                  color: AppColors.primaryBackground,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(41, 0, 0, 0),
+                      offset: Offset(0, 1),
+                      blurRadius: 0,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: TextField(
-              controller: controller.passwordController,
-              obscureText: !controller.showPassword.value,
-              decoration: InputDecoration(
-                hintText: "Enter your password",
-                contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 9),
-                border: InputBorder.none,
-                hintStyle: TextStyle(
-                  color: AppColors.primaryText,
-                ),
-                suffixIcon: IconButton(
-                  icon: Icon(
-                    controller.showPassword.value 
-                        ? Icons.visibility 
-                        : Icons.visibility_off,
-                    color: AppColors.primaryText.withOpacity(0.6),
+                child: TextField(
+                  controller: controller.passwordController,
+                  obscureText: !controller.showPassword.value,
+                  decoration: InputDecoration(
+                    hintText: "Enter your password",
+                    contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 9),
+                    border: InputBorder.none,
+                    hintStyle: TextStyle(
+                      color: AppColors.primaryText,
+                    ),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        controller.showPassword.value
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        color: AppColors.primaryText.withOpacity(0.6),
+                      ),
+                      onPressed: () => controller.togglePasswordVisibility(),
+                    ),
                   ),
-                  onPressed: () => controller.togglePasswordVisibility(),
+                  style: TextStyle(
+                    color: AppColors.primaryText,
+                    fontFamily: "Avenir",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18.sp,
+                  ),
                 ),
-              ),
-              style: TextStyle(
-                color: AppColors.primaryText,
-                fontFamily: "Avenir",
-                fontWeight: FontWeight.w400,
-                fontSize: 18.sp,
-              ),
-            ),
-          )),
-          
+              )),
+
           SizedBox(height: 10.h),
-          
+
           // Forgot password link
           Align(
             alignment: Alignment.centerRight,
@@ -102,58 +102,60 @@ class BuildEmailLoginForm extends StatelessWidget {
               ),
             ),
           ),
-          
+
           SizedBox(height: 10.h),
-          
+
           // Forgot Password link
-          Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () => controller.handleForgotPasswordDialog(),
-              child: Text(
-                'Forgot Password?',
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  color: AppColors.primaryElement,
-                ),
-              ),
-            ),
-          ),
-          
+          // Align(
+          //   alignment: Alignment.centerRight,
+          //   child: TextButton(
+          //     onPressed: () => controller.handleForgotPasswordDialog(),
+          //     child: Text(
+          //       'Forgot Password?',
+          //       style: TextStyle(
+          //         fontSize: 14.sp,
+          //         color: AppColors.primaryElement,
+          //       ),
+          //     ),
+          //   ),
+          // ),
+
           SizedBox(height: 10.h),
-          
+
           // Sign In button
           Obx(() => btnFlatButtonWidget(
-            onPressed: controller.isLoading.value 
-                ? () {} 
-                : () => controller.handleEmailSignIn(),
-            width: 295.w,
-            height: 50.h,
-            title: controller.isLoading.value ? "Signing In..." : "Sign In",
-            gbColor: AppColors.primaryElement,
-            fontColor: AppColors.primaryElementText,
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          )),
-          
+                onPressed: controller.isLoading.value
+                    ? () {}
+                    : () => controller.handleEmailSignIn(),
+                width: 295.w,
+                height: 50.h,
+                title: controller.isLoading.value ? "Signing In..." : "Sign In",
+                gbColor: AppColors.primaryElement,
+                fontColor: AppColors.primaryElementText,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              )),
+
           SizedBox(height: 15.h),
-          
+
           // Sign Up button
           Obx(() => btnFlatButtonWidget(
-            onPressed: controller.isLoading.value 
-                ? () {} 
-                : () => controller.handleCreateAccount(),
-            width: 295.w,
-            height: 50.h,
-            title: controller.isLoading.value ? "Creating Account..." : "Create Account",
-            gbColor: AppColors.secondaryElement,
-            fontColor: AppColors.primaryElement,
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          )),
-          
+                onPressed: controller.isLoading.value
+                    ? () {}
+                    : () => controller.handleCreateAccount(),
+                width: 295.w,
+                height: 50.h,
+                title: controller.isLoading.value
+                    ? "Creating Account..."
+                    : "Create Account",
+                gbColor: AppColors.secondaryElement,
+                fontColor: AppColors.primaryElement,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              )),
+
           SizedBox(height: 30.h),
-          
+
           // Divider
           Row(
             children: [
