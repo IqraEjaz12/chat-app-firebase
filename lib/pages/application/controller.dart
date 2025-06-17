@@ -21,7 +21,7 @@ class ApplicationController extends GetxController {
   void onInit() {
     super.onInit();
     tabTitles = ["Chats", "Contacts", "Profile"];
-    pageController = PageController(initialPage: 0);
+    pageController = PageController(initialPage: state.currentPage);
     bottomTabs = [
       BottomNavigationBarItem(
         icon: const Icon(
@@ -30,18 +30,6 @@ class ApplicationController extends GetxController {
         ),
         activeIcon: const Icon(
           Icons.message,
-          color: AppColors.secondaryElementText,
-        ),
-        label: tabTitles[0],
-        backgroundColor: AppColors.primaryBackground,
-      ),
-      BottomNavigationBarItem(
-        icon: const Icon(
-          Icons.contact_page,
-          color: AppColors.thirdElementText,
-        ),
-        activeIcon: const Icon(
-          Icons.contact_page,
           color: AppColors.secondaryElementText,
         ),
         label: tabTitles[0],
