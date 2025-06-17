@@ -16,7 +16,8 @@ class SignUpController extends GetxController {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   // Observable variables
   var isLoading = false.obs;
@@ -125,7 +126,8 @@ class SignUpController extends GetxController {
       print('Starting sign-up process...');
 
       // Create user with email and password
-      final UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+      final UserCredential userCredential =
+          await _auth.createUserWithEmailAndPassword(
         email: emailController.text.trim(),
         password: passwordController.text,
       );
@@ -134,7 +136,8 @@ class SignUpController extends GetxController {
 
       if (userCredential.user != null) {
         // Update display name
-        await userCredential.user!.updateDisplayName(nameController.text.trim());
+        await userCredential.user!
+            .updateDisplayName(nameController.text.trim());
 
         // Create user document in Firestore
         await _createUserDocument(userCredential.user!);

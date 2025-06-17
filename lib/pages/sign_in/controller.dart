@@ -1,8 +1,6 @@
 import 'package:firebase_chat/common/entities/user.dart';
-import 'package:firebase_chat/common/routes/routes.dart';
 import 'package:firebase_chat/common/store/user.dart';
 import 'package:firebase_chat/common/utils/validator.dart';
-import 'package:firebase_chat/common/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -84,41 +82,6 @@ class SiginInController extends GetxController {
         await _handleSuccessfulAuth(userCredential.user!);
         Get.snackbar('Success', 'Signed in successfully!');
       }
-      String? userName = userCredential.user!.displayName;
-      String userId = userCredential.user!.uid;
-      String? userEmail = userCredential.user!.email;
-      String? photoUrl = userCredential.user!.photoURL;
-
-      var userBase = await _firestore
-          .collection("users")
-          .withConverter(
-            fromFirestore: UserData.fromFirestore,
-            toFirestore: (UserData userData, options) => userData.toFirestore(),
-          )
-          .where("id", isEqualTo: userCredential.user!.uid)
-          .get();
-      if (userBase.docs.isEmpty) {
-        final data = UserData(
-          id: userId,
-          email: userEmail,
-          name: userName,
-          photourl: photoUrl,
-          location: "",
-          fcmtoken: "",
-          addtime: Timestamp.now(),
-        );
-
-        await _firestore
-            .collection("users")
-            .withConverter(
-              fromFirestore: UserData.fromFirestore,
-              toFirestore: (UserData userData, options) =>
-                  userData.toFirestore(),
-            )
-            .add(data);
-      }
-
-      Get.offAndToNamed(AppRoutes.Application);
     } on FirebaseAuthException catch (e) {
       String errorMessage = _getAuthErrorMessage(e.code);
       Get.snackbar(
@@ -423,17 +386,5 @@ class SiginInController extends GetxController {
         ],
       ),
     );
-  }
-
-  @override
-  void onReady() {
-    FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user == null) {
-        print("User is currently logout");
-      } else {
-        debugPrint("User is currently logged in");
-      }
-    });
-    super.onReady();
   }
 }

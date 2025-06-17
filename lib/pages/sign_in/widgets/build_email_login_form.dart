@@ -106,19 +106,19 @@ class BuildEmailLoginForm extends StatelessWidget {
           SizedBox(height: 10.h),
 
           // Forgot Password link
-          // Align(
-          //   alignment: Alignment.centerRight,
-          //   child: TextButton(
-          //     onPressed: () => controller.handleForgotPasswordDialog(),
-          //     child: Text(
-          //       'Forgot Password?',
-          //       style: TextStyle(
-          //         fontSize: 14.sp,
-          //         color: AppColors.primaryElement,
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () => controller.handleForgotPasswordDialog(),
+              child: Text(
+                'Forgot Password?',
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  color: AppColors.primaryElement,
+                ),
+              ),
+            ),
+          ),
 
           SizedBox(height: 10.h),
 
