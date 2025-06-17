@@ -1,3 +1,4 @@
+import 'package:firebase_chat/pages/application/index.dart';
 import 'package:firebase_chat/pages/welcome/view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_chat/common/middlewares/middlewares.dart';
@@ -31,18 +32,20 @@ class AppPages {
       page: () => SignUpPage(),
       binding: SignUpBinding(),
     ),
-    /*
-   
-
-    // check if needed to login or not
     GetPage(
       name: AppRoutes.Application,
       page: () => ApplicationPage(),
       binding: ApplicationBinding(),
-      middlewares: [
-        RouteAuthMiddleware(priority: 1),
-      ],
+      // middlewares: [
+      //   RouteAuthMiddleware(priority: 1),
+      // ],
     ),
+
+    /*
+   
+
+    // check if needed to login or not
+ 
 
     // 最新路由
     // 首页
